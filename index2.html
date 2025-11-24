@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumission d'Idées de Projets Weekend</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#282c34', // Fond gris foncé
+                        'active-green': '#4CAF50', // Vert actif
+                        'error-red': '#FF5733', // Rouge erreur
+                        'text-light': '#f0f0f0', // Texte clair
+                        'button-green': '#48e67e', // Vert plus clair pour le bouton
+                    },
+                    fontFamily: {
+                        // Utilisation d'une police systeme ou Google Font pour le titre
+                        'display': ['Bebas Neue', 'sans-serif'],
+                        'sans': ['Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <script src="script.js" defer></script> 
+
+    <style>
+        /* Styles personnalisés pour le titre pour correspondre à la taille de l'image */
+        .title-huge {
+            font-size: 5.5rem; /* ~90px */
+            line-height: 0.9;
+        }
+        /* Pour cacher les labels (accessibilité) */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg min-h-screen flex justify-center items-center text-text-light font-sans p-4">
+
+    <div class="main-layout flex w-full max-w-6xl p-10">
+
+        <div class="left-panel flex-1 pr-12 pt-3">
+            
+            <div class="logo-container mb-6 flex items-center">
+                <img src="Omnitech_logo.jpg" alt="Logo Dev & Algo Club" class="club-logo w-16 h-auto 
+                filter invert brightness-150 drop-shadow-lg 
+                shadow-white/50">
+                <span class="ml-3 text-xl font-bold tracking-widest">Dev & Algo <span class="block text-sm font-normal opacity-75 leading-none">Club</span></span>
+            </div>
+
+            <h1 class="title-huge font-display text-text-light text-left">
+                Idée de Projet !
+            </h1>
+                        
+        </div>
+
+        <div class="right-panel flex-1 max-w-md">
+
+            <form id="projectIdeaForm" action="https://formspree.io/f/xvgnazpd" method="POST" class="space-y-8">
+                
+                <div class="form-group" data-field="memberName">
+                    <label for="member-name" class="visually-hidden">Votre Nom et Prénom</label>
+                    <input type="text" id="member-name" name="memberName" placeholder="Votre Nom et Prénom" required
+                           class="w-full p-3 bg-transparent border-2 border-text-light rounded-md text-text-light placeholder-gray-400 focus:outline-none 
+                                  focus:border-active-green focus:ring-2 focus:ring-active-green/50 transition duration-300">
+                    <div class="help-text text-sm mt-1"></div>
+                </div>
+
+                <div class="form-group is-active" data-field="projectTitle">
+                    <label for="project-title" class="visually-hidden">Titre du Projet</label>
+                    <input type="text" id="project-title" name="projectTitle" placeholder="Titre du Projet" required value="Titre du Projet"
+                           class="w-full p-3 bg-transparent border-2 border-active-green rounded-md text-text-light placeholder-gray-400 focus:outline-none 
+                                  focus:border-active-green focus:ring-2 focus:ring-active-green/50 transition duration-300">
+                    <div class="help-text text-sm mt-1"></div>
+                </div>
+
+                <div class="form-group is-active" data-field="description">
+                    <label for="description" class="visually-hidden">Description et Objectifs</label>
+                    <textarea id="description" name="description" rows="5" placeholder="Description et Objectifs" required
+                              class="w-full p-3 bg-transparent border-2 border-active-green rounded-md text-text-light placeholder-gray-400 focus:outline-none 
+                                     focus:border-active-green focus:ring-2 focus:ring-active-green/50 transition duration-300">Description et Objectifs</textarea>
+                    <div class="help-text text-sm mt-1"></div>
+                </div>
+                
+                <div class="form-group" data-field="technologies">
+                    <label for="technologies" class="visually-hidden">Technologies Suggérées</label>
+                    <input type="text" id="technologies" name="technologies" placeholder="Technologies Suggérées"
+                           class="w-full p-3 bg-transparent border-2 border-text-light rounded-md text-text-light placeholder-gray-400 focus:outline-none 
+                                  focus:border-active-green focus:ring-2 focus:ring-active-green/50 transition duration-300">
+                    <div class="help-text text-sm mt-1"></div>
+                </div>
+
+                
+
+
+                <button type="submit" class="w-full bg-button-green hover:bg-active-green text-dark-bg font-bold py-4 rounded-md text-lg transition duration-300 mt-10">
+                    SOUMETTRE L'IDÉE
+                </button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
